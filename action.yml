@@ -1,0 +1,37 @@
+name: SCP Action
+description: Copy files using SCP
+author: 'Shukhrat Utaboev'
+
+inputs:
+  host:
+    description: 'The hostname or IP address of the remote server'
+    required: true
+  user:
+    description: 'The username for authentication'
+    required: true
+  key:
+    description: 'The private key for authentication'
+    required: true
+  port:
+    description: 'The port number for SSH connection'
+    required: true
+  src:
+    description: 'The source file or directory to copy'
+    required: true
+  dst:
+    description: 'The destination directory on the remote server'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.host }}
+    - ${{ inputs.user }}
+    - ${{ inputs.key }}
+    - ${{ inputs.port }}
+    - ${{ inputs.src }}
+    - ${{ inputs.dst }}
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
