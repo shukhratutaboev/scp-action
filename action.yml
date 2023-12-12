@@ -1,5 +1,5 @@
-name: SCP Action
-description: Copy files using SCP
+name: 'SCP action for Taqsim'
+description: 'Copy files using SCP'
 author: 'Shukhrat Utaboev'
 
 inputs:
