@@ -21,6 +21,9 @@ inputs:
   dst:
     description: 'The destination directory on the remote server'
     required: true
+  conn:
+    description: 'The connection string'
+    required: true
 
 runs:
   using: 'docker'
@@ -32,6 +35,7 @@ runs:
     - ${{ inputs.port }}
     - ${{ inputs.src }}
     - ${{ inputs.dst }}
+    - ${{ inputs.conn }}
 branding:
   icon: 'upload-cloud'
   color: 'green'
